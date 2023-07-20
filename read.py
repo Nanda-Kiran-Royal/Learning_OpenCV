@@ -9,7 +9,21 @@ cv.imshow('Adidas', img)
 
 
 
+#Resizing the video and image Of existing video
 
+def rescaleFrame(frame,scale=0.75):
+    width = int(frame.shape[1]*scale)
+    height = int(frame.shape[0]*scale)
+    dimensions = (width,height)
+    return cv.resize(frame,dimensions,interpolation=cv.INTER_AREA)
+
+
+#Function for changing the resolution of live image or video
+
+def changeRes(width,height):
+    # Live video
+    capture.set(3,width)
+    capture.set(4,height)
 
 resized_image = rescaleFrame(img,scale = 0.5)
 cv.imshow('rescaled_image',resized_image)
