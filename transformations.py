@@ -30,6 +30,15 @@ def rotateImage(image,angle,rotPoint=None):
     dimensions = (width,height)
     return cv.warpAffine(img,rotMat,dimensions)
 
-rotated = rotateImage(img,120,4)
+rotated = rotateImage(img,120)
 cv.imshow('Rotated',rotated)
+
+
+##3.Resizing of Image
+resized = cv.resize(img,(500,500),interpolation=cv.INTER_CUBIC)
+cv.imshow('resized',resized)
+
+##4.Flipping the image
+flip = cv.flip(img,1)
+cv.imshow('Flip',flip)
 cv.waitKey(0)   
